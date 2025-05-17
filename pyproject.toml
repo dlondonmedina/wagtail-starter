@@ -1,0 +1,31 @@
+[project]
+name = "django-starter"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Dylan Medina",email = "dylan@dylanmedina.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django (>=5.2.1,<6.0.0)",
+    "django-allauth[socialaccount] (>=65.8.0,<66.0.0)",
+    "django-htmx (>=1.23.0,<2.0.0)",
+    "django-cleanup (>=9.0.0,<10.0.0)",
+    "pillow (>=11.2.1,<12.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "django_starter", from = "core"}]
+
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.26.0"
+mypy = "^1.15.0"
+ruff = "^0.11.10"
+django-extensions = "^4.1"
+django-debug-toolbar = "^5.2.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
