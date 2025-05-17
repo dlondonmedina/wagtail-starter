@@ -1,5 +1,5 @@
 [project]
-name = "django-starter"
+name = "wagtail-starter"
 version = "0.1.0"
 description = ""
 authors = [
@@ -12,7 +12,8 @@ dependencies = [
     "django-allauth[socialaccount] (>=65.8.0,<66.0.0)",
     "django-htmx (>=1.23.0,<2.0.0)",
     "django-cleanup (>=9.0.0,<10.0.0)",
-    "pillow (>=11.2.1,<12.0.0)"
+    "pillow (>=11.2.1,<12.0.0)",
+    "wagtail (>=7.0,<8.0)",
 ]
 
 [tool.poetry]

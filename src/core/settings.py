@@ -43,6 +43,21 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "django_htmx",
+    # Wagtail
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    "modelcluster",
+    "taggit",
     # apps
     "users",
 ]
@@ -57,6 +72,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Allauth
     "allauth.account.middleware.AccountMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -155,3 +172,6 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+WAGTAIL_SITE_NAME = "Wagtail-Starter"
+WAGTAILADMIN_BASE_URL = "http://localhost:8000"
