@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-#ysbkh1&eqt=)yrz^iqfg-4dke2_h39mkcmjqq4u@xv&a65usq"
+SECRET_KEY = "django-insecure-#ysbkh1&eqt=)yrz^iqfg-4dke2_h39mkcmjqq4u@xv&a65usq"  # nosec
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,6 +73,7 @@ MIDDLEWARE = [
     # Allauth
     "allauth.account.middleware.AccountMiddleware",
     "django_htmx.middleware.HtmxMiddleware",
+    # Wagtail
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
@@ -142,11 +143,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"
 
-MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -175,3 +176,15 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WAGTAIL_SITE_NAME = "Wagtail-Starter"
 WAGTAILADMIN_BASE_URL = "http://localhost:8000"
+WAGTAILDOCS_EXTENSIONS = [
+    "csv",
+    "docx",
+    "key",
+    "odt",
+    "pdf",
+    "pptx",
+    "rtf",
+    "txt",
+    "xlsx",
+    "zip",
+]

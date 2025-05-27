@@ -16,7 +16,7 @@ def profile_view(request, username=None):
     else:
         try:
             profile = request.user.profile
-        except:
+        except AttributeError:
             return redirect_to_login(request.get_full_path())
 
     return render(request, "users/profile.html", {"profile": profile})

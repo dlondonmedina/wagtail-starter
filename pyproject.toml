@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "django_starter", from = "core"}]
+packages = [{include = "src"}]
 
 
 [tool.poetry.group.dev.dependencies]
@@ -26,6 +26,10 @@ mypy = "^1.15.0"
 ruff = "^0.11.10"
 django-extensions = "^4.1"
 django-debug-toolbar = "^5.2.0"
+bandit = "^1.8.3"
+
+[tool.mypy]
+disable_error_code = ["import-untyped"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
